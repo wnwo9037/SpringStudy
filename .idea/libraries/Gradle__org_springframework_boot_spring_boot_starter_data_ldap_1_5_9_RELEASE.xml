@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.boot:spring-boot-starter-data-ldap:1.5.9.RELEASE">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-ldap/1.5.9.RELEASE/210819ab5e6da3daecf67726af8b9b67254690f8/spring-boot-starter-data-ldap-1.5.9.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-ldap/1.5.9.RELEASE/3c79cf2641d66acccf6c5d70ada0d66c1daffde9/spring-boot-starter-data-ldap-1.5.9.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
