@@ -1,13 +1,19 @@
 package com.test.kakaobot;
 
+import com.test.Model.UserData;
 import com.test.RestClass.Keyboard;
 import com.test.RestClass.Message;
 import com.test.RestClass.PostedMessage;
 import com.test.RestClass.ResponseMessage;
+import com.test.mappers.SherlockUserInterface;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class RestTestController {
+
+    @Autowired
+    private SherlockUserInterface sherlockUserInterface;
 
     @RequestMapping("/keyboard")
     public Keyboard getKeyboard(){
@@ -20,8 +26,21 @@ public class RestTestController {
         Message msg = new Message();
         msg.setText("Elemetary.\nMy dear, Watson.");
 
+        if(sherlockUserInterface.idCheck(postedMessage.getUser_key()) == 0){
+            UserData userData = new UserData();
+            userData.setId(0);
+            userData.setUser_key(postedMessage.getUser_key());
+            userData.setRoom_state(1);
+            userData.setFriend_state(0);
+            sherlockUserInterface.signupUser(userData);
+        }
+
         if("셜록".equals(postedMessage.getContent())){
             int randomWord = (int)Math.floor(Math.random()*10)+1;
+            /**
+             * 나중에 이런 문구들을 모두 DB에서 빼오는 방식으로 설정한다.
+             * 여기에 맞춰서 DB 설계를 해야할 듯.
+             * */
             switch (randomWord) {
                 case 1 :
                     msg.setText("무슨 일인가?");

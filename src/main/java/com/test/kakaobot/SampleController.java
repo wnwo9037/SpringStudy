@@ -1,5 +1,6 @@
 package com.test.kakaobot;
 
+import com.test.Model.UserData;
 import com.test.mappers.TestMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.*;

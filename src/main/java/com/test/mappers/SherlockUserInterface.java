@@ -1,7 +1,10 @@
 package com.test.mappers;
 
-import java.util.Map;
+import com.test.Model.UserData;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface SherlockUserInterface {
-    public void signupUser(Map<Object, Object> userData);
+    public void signupUser(UserData userData);
+    public int idCheck(String user_key);
 }
