@@ -1,6 +1,7 @@
 package com.test.kakaobot;
 
 import com.test.DataAccessObject.GreetingChatDAO;
+import com.test.Model.Greeting;
 import com.test.Model.UserData;
 import com.test.mappers.SherlockUserInterface;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +43,15 @@ public class DateTestController {
     @RequestMapping("/mbSessionMappingTest")
     @ResponseBody
     public List<HashMap> mybatisMappingTest(){
+        return greetingChatDAO.selectGreeting();
+    }
+
+    @RequestMapping("/insertDataTest")
+    @ResponseBody
+    public List<HashMap> insertDataTest(){
+        Greeting greeting = new Greeting();
+        greeting.setContent("사건의 냄새가 나는군..");
+        greetingChatDAO.insertGreeting(greeting);
         return greetingChatDAO.selectGreeting();
     }
 }
