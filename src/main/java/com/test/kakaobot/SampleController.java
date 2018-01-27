@@ -1,4 +1,4 @@
-package com.test.hello;
+package com.test.kakaobot;
 
 import com.test.mappers.TestMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,8 +6,6 @@ import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @Controller
 @EnableAutoConfiguration
