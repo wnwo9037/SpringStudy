@@ -46,12 +46,12 @@ public class DateTestController {
         return greetingChatDAO.selectGreeting();
     }
 
-    @RequestMapping("/insertDataTest")
-    @ResponseBody
-    public List<HashMap> insertDataTest(){
-        Greeting greeting = new Greeting();
-        greeting.setContent("사건의 냄새가 나는군..");
-        greetingChatDAO.insertGreeting(greeting);
-        return greetingChatDAO.selectGreeting();
-    }
+//    @RequestMapping("/insertDataTest")
+//    @ResponseBody
+//    public List<HashMap> insertDataTest(){
+//        Greeting greeting = new Greeting();
+//        greeting.setContent("사건의 냄새가 나는군..");
+//        greetingChatDAO.insertGreeting(greeting);
+//        return greetingChatDAO.selectGreeting();
+//    }
 }
