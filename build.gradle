@@ -58,6 +58,10 @@ dependencies {
 	/* implementation: 내부에서만 보여지는 라이브러리 */
 	implementation 'org.mariadb.jdbc:mariadb-java-client:2.1.2'
 
+	/* embed tomcat & JSTL */
+	compile('org.apache.tomcat.embed:tomcat-embed-jasper')
+	compile('javax.servlet:jstl:1.2')
+
 	/* FREEMARKER */
 //	compile group: 'org.freemarker', name: 'freemarker', version: '2.3.14'
 	/* THYMELEAF */

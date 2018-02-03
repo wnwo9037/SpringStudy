@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -25,9 +26,21 @@ public class SampleController {
         SpringApplication.run(SampleController.class, args);
     }
 
+//    @RequestMapping("/index")
+//    public String viewIndex(Model model) {
+//        model.addAttribute("greeting", "Hello, world!");
+//        return "index";
+//    }
+
     @RequestMapping("/test")
     @ResponseBody
     String getTime(){
         return testMapper.getTime();
+    }
+
+    @RequestMapping("/testJSP")
+    @ResponseBody
+    String getTimeS(){
+        return "index";
     }
 }
