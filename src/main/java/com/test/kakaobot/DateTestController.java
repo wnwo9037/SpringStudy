@@ -1,9 +1,8 @@
 package com.test.kakaobot;
 
-import com.test.DataAccessObject.GreetingChatDAO;
-import com.test.Model.Greeting;
-import com.test.Model.UserData;
+import com.test.dao.GreetingChatDao;
 import com.test.mappers.SherlockUserInterface;
+import com.test.model.UserData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,40 +17,31 @@ public class DateTestController {
     @Autowired
     private SherlockUserInterface sherlockUserInterface;
     @Autowired
-    private GreetingChatDAO greetingChatDAO;
+    private GreetingChatDao greetingChatDao;
 
     /**
      * 마이바티스 기본 최소 설정으로 세팅한 메소드
-     * @return
+     * @return Success! Maybeeeee..?
      */
     @RequestMapping("/dataTest")
     @ResponseBody
-    public String responseDataInput(){
+    public String responseDataInput() {
         UserData userData = new UserData();
         userData.setId(0);
-        userData.setUser_key("HASHED_KEY");
-        userData.setRoom_state(1);
-        userData.setFriend_state(0);
+        userData.setUserKey("HASHED_KEY");
+        userData.setRoomState(1);
+        userData.setFriendState(0);
         sherlockUserInterface.signupUser(userData);
         return "Success! Maybeeeee..?";
     }
 
     /**
-     * SqlSession을 활용해서 덧댄 메소드
-     * @return
+     * SqlSession을 활용해서 덧댄 메소드.
+     * @return greetings
      */
     @RequestMapping("/mbSessionMappingTest")
     @ResponseBody
-    public List<HashMap> mybatisMappingTest(){
-        return greetingChatDAO.selectGreeting();
+    public List<HashMap> mybatisMappingTest() {
+        return greetingChatDao.selectGreeting();
     }
-
-//    @RequestMapping("/insertDataTest")
-//    @ResponseBody
-//    public List<HashMap> insertDataTest(){
-//        Greeting greeting = new Greeting();
-//        greeting.setContent("사건의 냄새가 나는군..");
-//        greetingChatDAO.insertGreeting(greeting);
-//        return greetingChatDAO.selectGreeting();
-//    }
 }

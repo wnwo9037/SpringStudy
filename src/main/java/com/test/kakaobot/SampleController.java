@@ -1,13 +1,12 @@
 package com.test.kakaobot;
 
-import com.test.Model.UserData;
 import com.test.mappers.TestMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.*;
-import org.springframework.boot.autoconfigure.*;
-import org.springframework.stereotype.*;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @EnableAutoConfiguration
@@ -26,21 +25,15 @@ public class SampleController {
         SpringApplication.run(SampleController.class, args);
     }
 
-//    @RequestMapping("/index")
-//    public String viewIndex(Model model) {
-//        model.addAttribute("greeting", "Hello, world!");
-//        return "index";
-//    }
-
     @RequestMapping("/test")
     @ResponseBody
-    String getTime(){
+    String getTime() {
         return testMapper.getTime();
     }
 
     @RequestMapping("/testJSP")
     @ResponseBody
-    String getTimeS(){
+    String getTimeS() {
         return "index";
     }
 }

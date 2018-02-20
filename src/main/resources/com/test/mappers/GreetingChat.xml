@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.test.DataAccessObject.GreetingChatDAO">
+<mapper namespace="com.test.dao.GreetingChatDao">
     <select id="selectGreeting" resultType="hashmap">
         select
                     *
         from
                     greeting
     </select>
-    <insert id="insertGreeting" parameterType="com.test.Model.Greeting">
+    <insert id="insertGreeting" parameterType="com.test.model.Greeting">
         insert into
                     greeting
         (
