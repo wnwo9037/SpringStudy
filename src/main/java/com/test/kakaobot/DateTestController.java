@@ -6,6 +6,7 @@ import com.test.model.UserData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
@@ -23,7 +24,7 @@ public class DateTestController {
      * 마이바티스 기본 최소 설정으로 세팅한 메소드
      * @return Success! Maybeeeee..?
      */
-    @RequestMapping("/dataTest")
+    @RequestMapping(value = "/dataTest", method = RequestMethod.POST)
     @ResponseBody
     public String responseDataInput() {
         UserData userData = new UserData();
@@ -39,7 +40,7 @@ public class DateTestController {
      * SqlSession을 활용해서 덧댄 메소드.
      * @return greetings
      */
-    @RequestMapping("/mbSessionMappingTest")
+    @RequestMapping(value = "/mbSessionMappingTest", method = RequestMethod.POST)
     @ResponseBody
     public List<HashMap> mybatisMappingTest() {
         return greetingChatDao.selectGreeting();

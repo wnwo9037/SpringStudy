@@ -18,7 +18,7 @@ public class RestTestController {
     @Autowired
     private SherlockUserInterface sherlockUserInterface;
 
-    @RequestMapping("/keyboard")
+    @RequestMapping(value = "/keyboard", method = RequestMethod.POST)
     public Keyboard getKeyboard() {
         return new Keyboard();
     }

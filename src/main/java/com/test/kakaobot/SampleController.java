@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -15,7 +16,7 @@ public class SampleController {
     @Autowired
     private TestMapper testMapper;
 
-    @RequestMapping("/")
+    @RequestMapping(value = "/", method = RequestMethod.POST)
     @ResponseBody
     String home() {
         return "Hello World!";
@@ -25,13 +26,13 @@ public class SampleController {
         SpringApplication.run(SampleController.class, args);
     }
 
-    @RequestMapping("/test")
+    @RequestMapping(value = "/test", method = RequestMethod.POST)
     @ResponseBody
     String getTime() {
         return testMapper.getTime();
     }
 
-    @RequestMapping("/testJSP")
+    @RequestMapping(value = "/testJSP", method = RequestMethod.POST)
     @ResponseBody
     String getTimeS() {
         return "index";
